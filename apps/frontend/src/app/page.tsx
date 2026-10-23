@@ -10,8 +10,15 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/15 border border-teal-400/40 text-teal-200 text-xs font-semibold tracking-wide uppercase">
-                Portal Institucional TESE · 9 Ingenierías + Campus Moodle
+              <div className="flex items-center gap-4">
+                <img
+                  src="/logo-tese.png"
+                  alt="Escudo Oficial TESE"
+                  className="w-20 h-20 rounded-2xl bg-white p-1.5 object-contain shadow-xl border-2 border-teal-400/50"
+                />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/15 border border-teal-400/40 text-teal-200 text-xs font-semibold tracking-wide uppercase">
+                  Portal Institucional TESE · 9 Ingenierías + Campus Moodle
+                </div>
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">

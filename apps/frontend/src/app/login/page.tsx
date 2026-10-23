@@ -37,18 +37,25 @@ export default function LoginPage() {
   return (
     <div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6">
-        <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-iinicia-primary">
-            Identidad Institucional · TESE
-          </span>
-          <h1 className="text-3xl font-extrabold text-slate-900 mt-1">
-            Iniciar Sesión
-          </h1>
-          <p className="text-sm text-slate-600 mt-2">
-            Ingresa con tu correo registrado para acceder a tu panel del TESE y
-            al Campus Virtual Moodle según tu rol autorizado.
-          </p>
+        <div className="flex items-center gap-4">
+          <img
+            src="/logo-tese.png"
+            alt="Escudo TESE"
+            className="w-16 h-16 rounded-xl bg-white p-1 border border-slate-200 object-contain shadow-sm shrink-0"
+          />
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-iinicia-primary">
+              Identidad Institucional · TESE
+            </span>
+            <h1 className="text-3xl font-extrabold text-slate-900 mt-0.5">
+              Iniciar Sesión
+            </h1>
+          </div>
         </div>
+        <p className="text-sm text-slate-600">
+          Ingresa con tu correo registrado para acceder a tu panel del TESE y
+          al Campus Virtual Moodle según tu rol autorizado.
+        </p>
 
         {error && (
           <div

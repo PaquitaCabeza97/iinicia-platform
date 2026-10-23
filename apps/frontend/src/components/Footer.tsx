@@ -7,10 +7,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-iinicia-teal flex items-center justify-center text-iinicia-navy font-extrabold text-xs">
-                TESE
-              </div>
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo-tese.png"
+                alt="Escudo TESE"
+                className="w-10 h-10 rounded-lg bg-white p-0.5 object-contain shadow-sm"
+              />
               <span className="font-extrabold text-lg text-white">TESE</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">

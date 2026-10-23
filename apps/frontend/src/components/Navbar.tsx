@@ -50,15 +50,17 @@ export function Navbar() {
               href="/"
               className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-iinicia-teal rounded-lg p-1"
             >
-              <div className="w-10 h-10 rounded-xl bg-iinicia-teal flex items-center justify-center text-iinicia-navy font-extrabold text-base shadow-sm tracking-tighter">
-                TESE
-              </div>
+              <img
+                src="/logo-tese.png"
+                alt="Escudo oficial del Tecnológico de Estudios Superiores de Ecatepec (TESE)"
+                className="w-12 h-12 rounded-lg bg-white p-0.5 object-contain shadow-sm"
+              />
               <div>
                 <span className="block font-extrabold text-xl tracking-tight leading-none">
                   TESE
                 </span>
                 <span className="block text-xs text-teal-200 font-medium mt-0.5">
-                  Tecnológico de Estudios Superiores
+                  Tecnológico de Estudios Superiores de Ecatepec
                 </span>
               </div>
             </Link>
