@@ -8,15 +8,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-iinicia-teal flex items-center justify-center text-iinicia-navy font-extrabold text-sm">
-                II
+              <div className="w-8 h-8 rounded-lg bg-iinicia-teal flex items-center justify-center text-iinicia-navy font-extrabold text-xs">
+                TESE
               </div>
-              <span className="font-extrabold text-lg text-white">IINICIA</span>
+              <span className="font-extrabold text-lg text-white">TESE</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Plataforma Digital Universitaria integrada: Portal React/Next.js,
-              Identidad y RBAC en Supabase, API centralizada en NestJS y Campus
-              Virtual Moodle LMS.
+              Portal Institucional y Campus Virtual del Tecnológico de Estudios
+              Superiores de Ecatepec (TESE): 9 Ingenierías con planes de 9
+              semestres, integrado con React/Next.js, NestJS, Supabase y Moodle.
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© 2026 Instituto Universitario IINICIA. Todos los derechos reservados.</p>
+          <p>© 2026 TESE — Tecnológico de Estudios Superiores de Ecatepec. Todos los derechos reservados.</p>
           <p>Versión 1.0 · Arquitectura Next.js · NestJS · Supabase · Moodle</p>
         </div>
       </div>

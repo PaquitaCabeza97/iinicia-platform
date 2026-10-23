@@ -35,6 +35,12 @@ export interface ProfileRecord {
   updated_at: string;
 }
 
+export interface ProgramSemester {
+  semester: number;
+  title: string;
+  subjects: string[];
+}
+
 export interface ProgramRecord {
   id: string;
   slug: string;
@@ -45,6 +51,7 @@ export interface ProgramRecord {
   duration: string;
   summary: string;
   description: string;
+  semesters?: ProgramSemester[];
   is_active: boolean;
 }
 

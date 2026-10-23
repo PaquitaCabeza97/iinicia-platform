@@ -44,21 +44,21 @@ export function Navbar() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Identidad Institucional */}
+          {/* Identidad Institucional TESE */}
           <div className="flex items-center gap-3">
             <Link
               href="/"
               className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-iinicia-teal rounded-lg p-1"
             >
-              <div className="w-10 h-10 rounded-xl bg-iinicia-teal flex items-center justify-center text-iinicia-navy font-extrabold text-xl shadow-sm">
-                II
+              <div className="w-10 h-10 rounded-xl bg-iinicia-teal flex items-center justify-center text-iinicia-navy font-extrabold text-base shadow-sm tracking-tighter">
+                TESE
               </div>
               <div>
                 <span className="block font-extrabold text-xl tracking-tight leading-none">
-                  IINICIA
+                  TESE
                 </span>
                 <span className="block text-xs text-teal-200 font-medium mt-0.5">
-                  Plataforma Digital Universitaria
+                  Tecnológico de Estudios Superiores
                 </span>
               </div>
             </Link>

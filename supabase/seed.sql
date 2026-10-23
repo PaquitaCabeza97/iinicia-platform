@@ -1,5 +1,5 @@
 -- =============================================================================
--- IINICIA - Datos Semilla (Roles, Programas y Cursos obligatorios de Moodle)
+-- TESE (Portal Institucional) - Datos Semilla (Roles, 9 Ingenierías y Cursos Moodle)
 -- Cumple con la Sección 6 (Roles) y Sección 8.1 (Dos cursos de ejemplo obligatorios)
 -- =============================================================================
 
@@ -18,46 +18,119 @@ ON CONFLICT (code) DO UPDATE SET
     description = EXCLUDED.description,
     moodle_archetype = EXCLUDED.moodle_archetype;
 
--- 2. Catálogo de Programas Académicos (Sección 9.1 - Oferta académica)
+-- 2. Catálogo de las 9 Ingenierías del TESE (Sección 9.1 - Oferta académica)
 INSERT INTO public.programs (id, slug, code, title, type, modality, duration, summary, description, is_active)
 VALUES
     (
         '11111111-1111-4111-8111-111111111101',
-        'ingenieria-software-ti',
-        'LIC-ISTI-01',
-        'Licenciatura en Ingeniería de Software y Tecnologías de la Información',
+        'ingenieria-mecatronica',
+        'ING-MEC-01',
+        'Ingeniería Mecatrónica',
         'licenciatura',
-        'En línea (Campus Moodle)',
-        '9 Cuatrimestres',
-        'Formación integral en arquitectura de software, desarrollo web moderno, bases de datos y gestión de infraestructura tecnológica.',
-        'Programa universitario diseñado para formar profesionales capaces de diseñar, construir y operar plataformas digitales empresariales y educativas con estándares modernos de seguridad y escalabilidad.',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Enfocada en la integración de mecánica, electrónica y sistemas de control para automatizar procesos.',
+        'Forma profesionales capaces de diseñar, integrar y automatizar sistemas mecatrónicos, robóticos y de manufactura avanzada mediante mecánica de precisión, electrónica de potencia, microcontroladores y PLC.',
         true
     ),
     (
         '11111111-1111-4111-8111-111111111102',
-        'diplomado-desarrollo-web-fullstack',
-        'DIP-FS-02',
-        'Diplomado en Desarrollo Web Full-Stack con React y Node.js',
-        'diplomado',
-        'En línea (Campus Moodle)',
-        '160 Horas (4 Módulos)',
-        'Especialización práctica en interfaces modernas con React, Next.js, TypeScript y arquitecturas backend orientadas a servicios.',
-        'Diplomado intensivo enfocado en el dominio práctico de aplicaciones web con React, Next.js, NestJS y bases de datos relacionales con control de acceso basado en roles.',
+        'ingenieria-industrial',
+        'ING-IND-02',
+        'Ingeniería Industrial',
+        'licenciatura',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Orientada a la optimización de procesos, gestión de calidad, manufactura y logística.',
+        'Prepara ingenieros líderes en la mejora continua de sistemas productivos, ergonomía, investigación de operaciones, control estadístico de la calidad y cadenas de suministro.',
         true
     ),
     (
         '11111111-1111-4111-8111-111111111103',
-        'certificacion-arquitectura-cloud-seguridad',
-        'CERT-ACS-03',
-        'Certificación en Arquitectura Cloud y Seguridad Aplicada',
-        'certificacion',
-        'En línea (Campus Moodle)',
-        '80 Horas',
-        'Diseño de sistemas seguros, identidad federada, protección de APIs, Row Level Security y cumplimiento normativo.',
-        'Certificación técnica orientada a arquitectos y líderes técnicos que implementan sistemas seguros e integraciones institucionales.',
+        'ingenieria-quimica',
+        'ING-QUI-03',
+        'Ingeniería Química',
+        'licenciatura',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Centrada en la transformación de materias primas, diseño de reactores y termodinámica.',
+        'Desarrolla competencias en fenómenos de transporte, operaciones unitarias, cinética química, diseño de reactores, simulación y optimización de procesos industriales sustentables.',
+        true
+    ),
+    (
+        '11111111-1111-4111-8111-111111111104',
+        'ingenieria-bioquimica',
+        'ING-BIO-04',
+        'Ingeniería Bioquímica',
+        'licenciatura',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Aplicación de procesos biológicos y químicos en las industrias alimentaria y farmacéutica.',
+        'Integra microbiología industrial, bioquímica, ingeniería de biorreactores y operaciones unitarias para el desarrollo e innovación en alimentos, fármacos y bioprocesos.',
+        true
+    ),
+    (
+        '11111111-1111-4111-8111-111111111105',
+        'ingenieria-aeronautica',
+        'ING-AER-05',
+        'Ingeniería Aeronáutica',
+        'licenciatura',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Diseño, manufactura y mantenimiento de aeronaves y sistemas aeroespaciales.',
+        'Especializa en aerodinámica, estructuras aeronáuticas, sistemas de propulsión, dinámica y control de vuelo, manufactura y legislación aeronáutica.',
+        true
+    ),
+    (
+        '11111111-1111-4111-8111-111111111106',
+        'ingenieria-gestion-empresarial',
+        'ING-IGE-06',
+        'Ingeniería en Gestión Empresarial',
+        'licenciatura',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Combinación de administración de negocios, finanzas e ingeniería de procesos.',
+        'Forma estrategas organizacionales en finanzas corporativas, capital humano, mercadotecnia, innovación, gestión de la producción y dirección estratégica.',
+        true
+    ),
+    (
+        '11111111-1111-4111-8111-111111111107',
+        'ingenieria-electromecanica',
+        'ING-IEM-07',
+        'Ingeniería Electromecánica',
+        'licenciatura',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Integración de sistemas eléctricos, mecánicos y térmicos para la industria.',
+        'Capacita en el análisis, diseño y mantenimiento de máquinas eléctricas, subestaciones, sistemas hidráulicos y neumáticos, transferencia de calor, refrigeración y automatización.',
+        true
+    ),
+    (
+        '11111111-1111-4111-8111-111111111108',
+        'ingenieria-electronica',
+        'ING-IEL-08',
+        'Ingeniería Electrónica',
+        'licenciatura',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Diseño de hardware, telecomunicaciones, instrumentación y control analógico/digital.',
+        'Enfocada en semiconductores, diseño digital con VHDL, amplificadores operacionales, microcontroladores, optoelectrónica, sistemas de comunicación y control.',
+        true
+    ),
+    (
+        '11111111-1111-4111-8111-111111111109',
+        'ingenieria-logistica',
+        'ING-LOG-09',
+        'Ingeniería en Logística',
+        'licenciatura',
+        'Escolarizada y Apoyo en Campus Moodle',
+        '9 Semestres',
+        'Diseño, operación y mejora de cadenas de suministro, transporte y almacenes.',
+        'Prepara especialistas en tráfico y transporte, legislación aduanera, gestión de inventarios, almacenes, envase y embalaje, simulación logística y servicio al cliente.',
         true
     )
 ON CONFLICT (code) DO UPDATE SET
+    slug = EXCLUDED.slug,
     title = EXCLUDED.title,
     summary = EXCLUDED.summary,
     description = EXCLUDED.description;

@@ -6,9 +6,9 @@ import { AuthProvider } from '../context/AuthContext';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'IINICIA | Plataforma Digital Universitaria (React + Moodle)',
+  title: 'TESE | Portal Institucional y Campus Virtual (React + Moodle)',
   description:
-    'Portal institucional de IINICIA integrado con Supabase Auth, NestJS y Campus Virtual Moodle.',
+    'Portal institucional del Tecnológico de Estudios Superiores de Ecatepec (TESE) con sus 9 Ingenierías, integrado con Supabase Auth, NestJS y Campus Virtual Moodle.',
 };
 
 export default function RootLayout({

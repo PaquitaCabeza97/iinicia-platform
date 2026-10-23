@@ -2,120 +2,167 @@
 
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { apiRequest, FALLBACK_PROGRAMS } from '../../lib/api';
+import { apiRequest, FALLBACK_PROGRAMS, ProgramItem } from '../../lib/api';
 
 export default function OfertaAcademicaPage() {
-  const [programs, setPrograms] = useState(FALLBACK_PROGRAMS);
-  const [filterType, setFilterType] = useState<string>('todos');
+  const [programs, setPrograms] = useState<ProgramItem[]>(FALLBACK_PROGRAMS);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
 
   useEffect(() => {
-    apiRequest<{ programs: typeof FALLBACK_PROGRAMS }>('/public/programs')
+    apiRequest<{ programs: ProgramItem[] }>('/public/programs')
       .then((res) => {
         if (res.programs?.length > 0) {
           setPrograms(res.programs);
         }
       })
       .catch(() => {
-        // Mantiene catálogo de respaldo si el backend está iniciando
+        // Mantiene catálogo de respaldo con las 9 Ingenierías de TESE
       });
   }, []);
 
-  const filtered =
-    filterType === 'todos'
-      ? programs
-      : programs.filter((p) => p.type === filterType);
+  const filtered = programs.filter((p) => {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    const matchTitle =
+      p.title.toLowerCase().includes(q) ||
+      p.summary.toLowerCase().includes(q) ||
+      p.code.toLowerCase().includes(q);
+    const matchSubjects = p.semesters?.some((sem) =>
+      sem.subjects.some((sub) => sub.toLowerCase().includes(q)),
+    );
+    return matchTitle || matchSubjects;
+  });
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-10">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-iinicia-primary">
-            Programas Académicos · Sección 9.1
+            Tecnológico de Estudios Superiores de Ecatepec · TESE
           </span>
           <h1 className="text-4xl font-extrabold text-slate-900 mt-1">
-            Oferta Académica
+            Oferta Académica: 9 Ingenierías
           </h1>
           <p className="text-slate-600 mt-2 max-w-2xl">
-            Conoce nuestras licenciaturas, diplomados y certificaciones
-            impartidas en el Campus Virtual Moodle de IINICIA.
+            Consulta el plan de estudios completo por semestre (Semestre 1 a
+            Semestre 9) de nuestras carreras de ingeniería e inscríbete desde el
+            portal.
           </p>
         </div>
 
-        {/* Filtro accesible por tipo */}
-        <div
-          role="group"
-          aria-label="Filtrar oferta académica por nivel"
-          className="flex flex-wrap gap-2"
-        >
-          {[
-            { id: 'todos', label: 'Todos' },
-            { id: 'licenciatura', label: 'Licenciaturas' },
-            { id: 'diplomado', label: 'Diplomados' },
-            { id: 'certificacion', label: 'Certificaciones' },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => setFilterType(tab.id)}
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition ${
-                filterType === tab.id
-                  ? 'bg-iinicia-primary text-white shadow-sm'
-                  : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        {/* Buscador por carrera o materia */}
+        <div className="w-full md:w-80">
+          <label
+            htmlFor="search-carrera"
+            className="block text-xs font-bold uppercase text-slate-600 mb-1"
+          >
+            Buscar ingeniería o asignatura
+          </label>
+          <input
+            id="search-carrera"
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Ej. Mecatrónica, Robótica, Reactores..."
+            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-iinicia-teal"
+          />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {filtered.map((prog) => (
-          <article
-            key={prog.id}
-            className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase bg-teal-50 text-iinicia-primary border border-teal-200">
-                  {prog.type}
-                </span>
-                <span className="text-xs font-mono text-slate-500">
-                  {prog.code}
-                </span>
-              </div>
-              <h2 className="text-xl font-bold text-slate-900 mb-2">
-                {prog.title}
-              </h2>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                {prog.summary}
-              </p>
-              <div className="text-xs text-slate-500 space-y-1 mb-6">
-                <div>
-                  <strong>Modalidad:</strong> {prog.modality}
-                </div>
-                <div>
-                  <strong>Duración:</strong> {prog.duration}
-                </div>
-              </div>
-            </div>
+      <div className="grid grid-cols-1 gap-8">
+        {filtered.map((prog, idx) => {
+          const isExpanded = expandedSlug === prog.slug;
+          return (
+            <article
+              key={prog.id}
+              className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6"
+            >
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div className="space-y-2 max-w-3xl">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold uppercase bg-teal-50 text-iinicia-primary border border-teal-200">
+                      Ingeniería #{idx + 1} · {prog.duration}
+                    </span>
+                    <span className="text-xs font-mono text-slate-500">
+                      Clave: {prog.code}
+                    </span>
+                    <span className="text-xs text-slate-500">
+                      Modalidad: {prog.modality}
+                    </span>
+                  </div>
 
-            <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-              <Link
-                href={`/oferta-academica/${prog.slug}`}
-                className="text-sm font-bold text-iinicia-primary hover:underline"
-              >
-                Ver detalle del programa →
-              </Link>
-              <Link
-                href="/registro"
-                className="px-3.5 py-2 rounded-lg text-xs font-bold bg-iinicia-teal text-slate-950 hover:bg-teal-400 transition"
-              >
-                Inscribirme
-              </Link>
-            </div>
-          </article>
-        ))}
+                  <h2 className="text-2xl font-extrabold text-slate-900">
+                    {prog.title}
+                  </h2>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {prog.summary}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3 shrink-0">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setExpandedSlug(isExpanded ? null : prog.slug)
+                    }
+                    className="px-4 py-2.5 rounded-xl text-xs font-bold border border-slate-300 text-slate-700 hover:bg-slate-100 transition"
+                  >
+                    {isExpanded
+                      ? '▲ Ocultar los 9 semestres'
+                      : '▼ Desplegar los 9 semestres'}
+                  </button>
+                  <Link
+                    href={`/oferta-academica/${prog.slug}`}
+                    className="px-4 py-2.5 rounded-xl text-xs font-bold bg-iinicia-primary text-white hover:bg-teal-900 transition"
+                  >
+                    Ver ficha completa →
+                  </Link>
+                  <Link
+                    href="/registro"
+                    className="px-4 py-2.5 rounded-xl text-xs font-bold bg-iinicia-teal text-slate-950 hover:bg-teal-400 transition"
+                  >
+                    Inscribirme
+                  </Link>
+                </div>
+              </div>
+
+              {/* Retícula de 9 Semestres Desplegable */}
+              {isExpanded && prog.semesters && (
+                <div className="pt-4 border-t border-slate-200">
+                  <h3 className="text-sm font-bold uppercase text-iinicia-primary mb-4">
+                    Mapa Curricular Oficial ({prog.title} — 9 Semestres)
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {prog.semesters.map((sem) => (
+                      <div
+                        key={sem.semester}
+                        className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2"
+                      >
+                        <div className="flex items-center justify-between border-b border-slate-200 pb-1.5">
+                          <span className="font-extrabold text-sm text-iinicia-navy">
+                            {sem.title}
+                          </span>
+                          <span className="text-[11px] font-semibold text-slate-500">
+                            {sem.subjects.length}{' '}
+                            {sem.subjects.length === 1
+                              ? 'materia'
+                              : 'materias'}
+                          </span>
+                        </div>
+                        <ul className="text-xs text-slate-700 space-y-1 list-disc pl-4">
+                          {sem.subjects.map((sub) => (
+                            <li key={sub}>{sub}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </article>
+          );
+        })}
       </div>
     </div>
   );

@@ -82,6 +82,7 @@ CREATE TABLE IF NOT EXISTS public.programs (
     duration TEXT NOT NULL,
     summary TEXT NOT NULL,
     description TEXT,
+    semesters JSONB DEFAULT '[]'::jsonb,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()

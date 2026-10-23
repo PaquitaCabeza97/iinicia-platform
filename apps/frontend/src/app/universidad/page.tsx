@@ -5,15 +5,16 @@ export default function UniversidadPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-14">
       <header className="max-w-3xl">
         <span className="text-xs font-bold uppercase tracking-wider text-iinicia-primary">
-          Identidad Institucional · Sección 9.1
+          Identidad Institucional · TESE
         </span>
         <h1 className="text-4xl font-extrabold text-slate-900 mt-1">
-          Nuestra Universidad
+          Tecnológico de Estudios Superiores de Ecatepec (TESE)
         </h1>
         <p className="text-lg text-slate-600 mt-3 leading-relaxed">
-          IINICIA es una institución de educación superior y formación continua
-          comprometida con la excelencia académica, la innovación tecnológica y
-          el aprendizaje flexible a través de un entorno digital seguro.
+          El TESE es una institución pública de educación superior tecnológica
+          comprometida con la formación de ingenieros de excelencia en 9
+          carreras estratégicas, apoyada por una plataforma digital moderna e
+          integrada con el Campus Virtual Moodle.
         </p>
       </header>
 
