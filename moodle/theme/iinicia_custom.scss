@@ -10,8 +10,8 @@ $success: #059669 !default;
 $info: #0284c7 !default;
 $warning: #d97706 !default;
 $danger: #dc2626 !default;
-$body-bg: #f8fafc !default;
-$body-color: #0f172a !default;
+$body-bg: #14b8a6 !default;
+$body-color: #042f2e !default;
 
 // Tipografía moderna y accesible (WCAG 2.2 AA)
 $font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !default;
@@ -41,8 +41,9 @@ $border-radius-lg: 1rem !default;
 .card,
 .coursebox,
 .activity-item {
+    background-color: #99f6e4 !important;
     border-radius: 0.875rem !important;
-    border: 1px solid #e2e8f0 !important;
+    border: 1px solid #0d9488 !important;
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 

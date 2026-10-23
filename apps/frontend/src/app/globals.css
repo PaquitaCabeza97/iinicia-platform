@@ -8,6 +8,36 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 antialiased;
+    background-color: #14b8a6; /* Verde turquesa principal */
+    color: #042f2e;
+    @apply antialiased;
   }
+}
+
+/* Sustitución global del fondo blanco y gris claro por tonos verde turquesa */
+.bg-white {
+  background-color: #99f6e4 !important; /* Turquesa suave para tarjetas y contenedores */
+  border-color: #0d9488 !important;
+}
+
+.bg-slate-50,
+.bg-slate-50\/50,
+.bg-slate-50\/80,
+.bg-slate-100 {
+  background-color: #5eead4 !important; /* Turquesa medio para bloques internos */
+  border-color: #0f766e !important;
+}
+
+/* Inputs, selects y textareas con fondo turquesa claro legible */
+input,
+select,
+textarea {
+  background-color: #ccfbf1 !important;
+  border-color: #0f766e !important;
+  color: #042f2e !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #115e59 !important;
 }
