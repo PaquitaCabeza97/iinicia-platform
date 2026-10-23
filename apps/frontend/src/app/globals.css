@@ -14,6 +14,45 @@
   }
 }
 
+/* Sustitución global del verde oscuro/azulado profundo por Rojo Institucional TESE */
+.bg-iinicia-navy,
+.bg-slate-900,
+.bg-slate-900\/80 {
+  background-color: #7f1d1d !important; /* Rojo institucional oscuro */
+}
+
+.bg-iinicia-primary,
+.bg-slate-800,
+.bg-slate-800\/80,
+.bg-slate-800\/90 {
+  background-color: #991b1b !important; /* Rojo institucional medio */
+}
+
+.from-iinicia-navy {
+  --tw-gradient-from: #7f1d1d !important;
+  --tw-gradient-to: rgb(127 29 29 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.via-iinicia-primary {
+  --tw-gradient-to: rgb(185 28 28 / 0) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), #b91c1c, var(--tw-gradient-to) !important;
+}
+
+.to-iinicia-primary,
+.to-slate-900 {
+  --tw-gradient-to: #991b1b !important;
+}
+
+.text-iinicia-primary,
+.text-iinicia-navy {
+  color: #991b1b !important;
+}
+
+.hover\:bg-teal-900:hover {
+  background-color: #7f1d1d !important;
+}
+
 /* Sustitución global del fondo blanco y gris claro por tonos verde turquesa */
 .bg-white {
   background-color: #99f6e4 !important; /* Turquesa suave para tarjetas y contenedores */
@@ -33,7 +72,7 @@ input,
 select,
 textarea {
   background-color: #ccfbf1 !important;
-  border-color: #0f766e !important;
+  border-color: #991b1b !important;
   color: #042f2e !important;
 }
 

@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         iinicia: {
-          navy: '#0b2534',
-          primary: '#0f3d3e',
+          navy: '#7f1d1d',    // Rojo institucional profundo (TESE)
+          primary: '#b91c1c', // Rojo institucional principal (TESE)
           teal: '#14b8a6',
           light: '#f0fdfa',
           gold: '#d97706',

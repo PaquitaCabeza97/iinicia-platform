@@ -3,8 +3,8 @@
 // Cumple con Sección 3 (Tema Moodle), Sección 13 y Criterio CA-17
 // =============================================================================
 
-// Paleta de colores institucional IINICIA (Coherente con Portal Next.js)
-$primary: #0f3d3e !default;        // Verde petróleo institucional profundo
+// Paleta de colores institucional TESE (Coherente con Portal Next.js)
+$primary: #b91c1c !default;        // Rojo institucional TESE
 $secondary: #14b8a6 !default;      // Turquesa académico / acento interactivo
 $success: #059669 !default;
 $info: #0284c7 !default;
@@ -20,9 +20,9 @@ $border-radius-lg: 1rem !default;
 
 // Barra de navegación superior de Moodle alineada al Portal React
 .navbar.fixed-top {
-    background: linear-gradient(90deg, #0b2534 0%, #0f3d3e 100%) !important;
+    background: linear-gradient(90deg, #7f1d1d 0%, #b91c1c 100%) !important;
     border-bottom: 2px solid #14b8a6 !important;
-    box-shadow: 0 4px 12px rgba(11, 37, 52, 0.15);
+    box-shadow: 0 4px 12px rgba(127, 29, 29, 0.25);
 
     .navbar-brand,
     .nav-link,
@@ -48,20 +48,20 @@ $border-radius-lg: 1rem !default;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 
     &:hover {
-        box-shadow: 0 8px 20px rgba(15, 61, 62, 0.08);
+        box-shadow: 0 8px 20px rgba(185, 28, 28, 0.12);
     }
 }
 
 // Botones primarios con contraste AA verificado
 .btn-primary {
-    background-color: #0f3d3e !important;
-    border-color: #0f3d3e !important;
+    background-color: #b91c1c !important;
+    border-color: #b91c1c !important;
     font-weight: 600;
     border-radius: 0.5rem;
 
     &:hover,
     &:focus {
-        background-color: #134e4a !important;
-        border-color: #134e4a !important;
+        background-color: #7f1d1d !important;
+        border-color: #7f1d1d !important;
     }
 }
