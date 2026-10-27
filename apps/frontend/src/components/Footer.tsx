@@ -18,7 +18,7 @@ export function Footer() {
             <p className="text-sm text-slate-400 leading-relaxed">
               Portal Institucional y Campus Virtual del Tecnológico de Estudios
               Superiores de Ecatepec (TESE): 9 Ingenierías con planes de 9
-              semestres, integrado con React/Next.js, NestJS, Supabase y Moodle.
+              semestres.
             </p>
           </div>
 

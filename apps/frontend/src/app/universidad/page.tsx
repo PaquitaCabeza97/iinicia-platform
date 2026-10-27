@@ -5,7 +5,7 @@ export default function UniversidadPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-14">
       <header className="max-w-3xl">
         <span className="text-xs font-bold uppercase tracking-wider text-iinicia-primary">
-          Identidad Institucional · TESE
+          TESE
         </span>
         <h1 className="text-4xl font-extrabold text-slate-900 mt-1">
           Tecnológico de Estudios Superiores de Ecatepec (TESE)
@@ -13,8 +13,7 @@ export default function UniversidadPage() {
         <p className="text-lg text-slate-600 mt-3 leading-relaxed">
           El TESE es una institución pública de educación superior tecnológica
           comprometida con la formación de ingenieros de excelencia en 9
-          carreras estratégicas, apoyada por una plataforma digital moderna e
-          integrada con el Campus Virtual Moodle.
+          carreras estratégicas.
         </p>
       </header>
 
@@ -27,8 +26,7 @@ export default function UniversidadPage() {
           <p className="text-sm text-slate-600 leading-relaxed">
             Somos una comunidad universitaria enfocada en el desarrollo de
             competencias profesionales en ingeniería, tecnología y gestión,
-            integrando acompañamiento docente personalizado y herramientas LMS de
-            estándar internacional.
+            integrando acompañamiento docente personalizado y herramientas.
           </p>
         </div>
 

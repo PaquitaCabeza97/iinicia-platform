@@ -16,6 +16,7 @@
     "test:poc": "node scripts/run-poc-e2e.mjs",
     "moodle:up": "docker compose up -d",
     "moodle:down": "docker compose down",
-    "moodle:provision": "node moodle/scripts/provision-courses-and-users.mjs"
+    "moodle:provision": "node moodle/scripts/provision-courses-and-users.mjs",
+    "supabase:verify": "node scripts/sync-to-supabase.mjs"
   }
 }

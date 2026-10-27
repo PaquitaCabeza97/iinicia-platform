@@ -1,7 +1,30 @@
 import 'reflect-metadata';
+import * as fs from 'fs';
+import * as path from 'path';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+
+// Cargar variables desde .env en la raíz del proyecto si existe
+for (const candidate of [
+  path.resolve(process.cwd(), '.env'),
+  path.resolve(process.cwd(), '../../.env'),
+]) {
+  if (fs.existsSync(candidate)) {
+    const lines = fs.readFileSync(candidate, 'utf8').split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const idx = trimmed.indexOf('=');
+      if (idx > 0) {
+        const k = trimmed.slice(0, idx).trim();
+        const v = trimmed.slice(idx + 1).trim();
+        if (!process.env[k]) process.env[k] = v;
+      }
+    }
+    break;
+  }
+}
 
 // Rate limiting ligero en memoria para endpoints sensibles (Sección 14)
 const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();

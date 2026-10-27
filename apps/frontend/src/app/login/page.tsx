@@ -45,7 +45,7 @@ export default function LoginPage() {
           />
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-iinicia-primary">
-              Identidad Institucional · TESE
+              TESE
             </span>
             <h1 className="text-3xl font-extrabold text-slate-900 mt-0.5">
               Iniciar Sesión
@@ -53,8 +53,7 @@ export default function LoginPage() {
           </div>
         </div>
         <p className="text-sm text-slate-600">
-          Ingresa con tu correo registrado para acceder a tu panel del TESE y
-          al Campus Virtual Moodle según tu rol autorizado.
+          Ingresa con tu correo registrado para acceder a tu panel del TESE.
         </p>
 
         {error && (
