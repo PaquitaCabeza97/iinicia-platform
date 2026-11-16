@@ -61,3 +61,12 @@ IINICIA/
    ```bash
    npm run test:poc
    ```
+
+---
+
+## Despliegue en Producción
+
+- **Frontend en Vercel**: https://iinicia.vercel.app
+- **Repositorio**: https://github.com/PaquitaCabeza97/iinicia-platform
+- El despliegue es automático: cada push a la rama `main` dispara un build de Vercel (Root Directory: `apps/frontend`).
+- Variables de entorno requeridas en Vercel para las secciones que consumen API: `NEXT_PUBLIC_API_URL` (backend NestJS, se despliega por separado), `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
