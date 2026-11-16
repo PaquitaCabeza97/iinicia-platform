@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  // Sección 12: Redirecciones 301 desde URLs relevantes heredadas de WordPress
+  webpack: (config) => {
+    config.cache = false;
+    return config;
+  },
   async redirects() {
     return [
       {
@@ -17,11 +20,6 @@ const nextConfig = {
       },
       {
         source: '/programas',
-        destination: '/oferta-academica',
-        permanent: true,
-      },
-      {
-        source: '/cursos',
         destination: '/oferta-academica',
         permanent: true,
       },

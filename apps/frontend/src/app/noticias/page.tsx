@@ -1,38 +1,11 @@
 import React from 'react';
 
 export default function NoticiasPage() {
-  const articles = [
-    {
-      id: '1',
-      date: '20 de octubre de 2026',
-      category: 'Transformación Digital',
-      title: 'IINICIA estrena nueva plataforma digital basada en React, Next.js y Moodle',
-      excerpt:
-        'La nueva arquitectura sustituye el antiguo portal en WordPress por un ecosistema integrado con identidad en Supabase Auth, control de acceso basado en roles (RBAC) y conexión directa al Campus Virtual.',
-    },
-    {
-      id: '2',
-      date: '15 de octubre de 2026',
-      category: 'Vida Académica',
-      title: 'Apertura de convocatorias para Ingeniería de Software y Diplomado en React',
-      excerpt:
-        'Los aspirantes ya pueden registrarse desde el portal institucional y dar seguimiento en tiempo real a su autorización académica e inscripción en Moodle.',
-    },
-    {
-      id: '3',
-      date: '10 de octubre de 2026',
-      category: 'Calidad y Accesibilidad',
-      title: 'Compromiso con el estándar WCAG 2.2 AA y seguridad de datos estudiantiles',
-      excerpt:
-        'Todas las operaciones sensibles están protegidas mediante Row Level Security (RLS) y validaciones del lado servidor, garantizando privacidad y trazabilidad.',
-    },
-  ];
-
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-10">
       <header>
         <span className="text-xs font-bold uppercase tracking-wider text-iinicia-primary">
-          Actualidad Universitaria · Sección 9.1
+          Actualidad Universitaria · IINICIA
         </span>
         <h1 className="text-4xl font-extrabold text-slate-900 mt-1">
           Noticias y Contenidos Institucionales
@@ -40,25 +13,103 @@ export default function NoticiasPage() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {articles.map((art) => (
-          <article
-            key={art.id}
-            className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between space-y-4"
-          >
-            <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs text-slate-500">
-                <span className="font-bold text-iinicia-primary">
-                  {art.category}
-                </span>
-                <time>{art.date}</time>
-              </div>
-              <h2 className="text-lg font-bold text-slate-900">{art.title}</h2>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                {art.excerpt}
-              </p>
+        {/* Tarjeta 1: Suspensión de labores el 2 de noviembre */}
+        <article className="relative bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between min-h-[290px] overflow-hidden">
+          <div className="space-y-3 z-10 pr-10">
+            <div className="flex items-center justify-between text-xs text-slate-600">
+              <span className="font-bold text-iinicia-primary">
+                Aviso Importante
+              </span>
+              <time>27 de octubre de 2026</time>
             </div>
-          </article>
-        ))}
+            <h2 className="text-lg font-extrabold text-slate-900 leading-snug">
+              Suspensión de labores el 2 de noviembre
+            </h2>
+            <p className="text-sm text-slate-800 leading-relaxed">
+              Se les informa a toda la comunidad estudiantil y académica que el
+              próximo{' '}
+              <strong className="font-bold text-slate-950">
+                lunes 2 de noviembre no habrá clases
+              </strong>
+              , con motivo de las festividades del{' '}
+              <strong className="font-bold text-slate-950">
+                Día de Muertos
+              </strong>
+              . Las actividades se reanudarán de manera normal al día siguiente.
+            </p>
+          </div>
+
+          {/* Ilustraciones esquina inferior derecha: Calendario y Calaverita */}
+          <div
+            aria-hidden="true"
+            className="absolute bottom-3 right-4 flex flex-col items-center gap-1 select-none"
+          >
+            <span className="text-3xl leading-none drop-shadow-sm">🗓️</span>
+            <span className="text-4xl leading-none drop-shadow-sm">💀</span>
+          </div>
+        </article>
+
+        {/* Tarjeta 2: ¡Llega la Gran Carrera de Botargas Universitarias! */}
+        <article className="relative bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between min-h-[290px] overflow-hidden">
+          <div className="space-y-3 z-10 pr-8">
+            <div className="flex items-center justify-between text-xs text-slate-600">
+              <span className="font-bold text-iinicia-primary">
+                Eventos Universitarios
+              </span>
+              <time>26 de octubre de 2026</time>
+            </div>
+            <h2 className="text-lg font-extrabold text-slate-900 leading-snug">
+              ¡Llega la Gran Carrera de Botargas IINICIA!
+            </h2>
+            <p className="text-sm text-slate-800 leading-relaxed">
+              La cita es el 30 de octubre a las 11:00 hrs. Ven a apoyar a la
+              botarga de tu especialidad en este divertido circuito. ¡No te
+              pierdas las sorpresas y el gran ambiente universitario!
+            </p>
+          </div>
+
+          {/* Ilustración esquina inferior derecha: Botarga / Arlequín corriendo */}
+          <div
+            aria-hidden="true"
+            className="absolute bottom-3 right-4 flex items-center select-none"
+          >
+            <span className="text-5xl leading-none drop-shadow-sm">🤹‍♂️</span>
+          </div>
+        </article>
+
+        {/* Tarjeta 3: Concurso de Ofrendas por Edificio */}
+        <article className="relative bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between min-h-[290px] overflow-hidden">
+          <div className="space-y-3 z-10 pr-8">
+            <div className="flex items-center justify-between text-xs text-slate-600">
+              <span className="font-bold text-iinicia-primary">
+                Tradiciones
+              </span>
+              <time>24 de octubre de 2026</time>
+            </div>
+            <h2 className="text-lg font-extrabold text-slate-900 leading-snug">
+              Concurso de Ofrendas por Edificio
+            </h2>
+            <p className="text-sm text-slate-800 leading-relaxed">
+              Se convoca a toda la comunidad a participar en el tradicional
+              concurso de ofrendas de Día de Muertos. Cada edificio mostrará su
+              creatividad y tradición. Consulta las bases con tus jefes de
+              división.
+            </p>
+          </div>
+
+          {/* Ilustración esquina inferior derecha: Ofrenda con foto, veladoras y cempasúchil */}
+          <div
+            aria-hidden="true"
+            className="absolute bottom-3 right-4 flex flex-col items-center select-none"
+          >
+            <div className="flex items-end gap-0.5 text-xl leading-none">
+              <span>🕯️</span>
+              <span>🖼️</span>
+              <span>🕯️</span>
+            </div>
+            <div className="text-lg leading-none -mt-1">🌼🏵️🌼</div>
+          </div>
+        </article>
       </div>
     </div>
   );
